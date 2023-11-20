@@ -1,7 +1,7 @@
-import { LogoutOutlined } from '@mui/icons-material'
-import { Button } from '@mui/material'
-import { Link } from 'react-router-dom'
-import { logout } from '~/utils/api/logout'
+import { LogoutOutlined } from "@mui/icons-material";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import { logout } from "~/utils/api/logout";
 
 export default function SideBar() {
   return (
@@ -13,5 +13,5 @@ export default function SideBar() {
         Log out
       </Button>
     </>
-  )
+  );
 }

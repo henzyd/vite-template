@@ -1,14 +1,14 @@
-import { Navigate, Outlet, useLocation } from 'react-router-dom'
-import { useCurrentUser } from '~/queries/user'
-import DashboardLoader from '~/components/loader/dashboard-loader'
+import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { useCurrentUser } from "~/queries/user";
+import DashboardLoader from "~/components/loader/dashboard";
 
 export default function Protected() {
-  const { data, isLoading } = useCurrentUser()
+  const { data, isLoading } = useCurrentUser();
 
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
   if (isLoading) {
-    return <DashboardLoader />
+    return <DashboardLoader />;
   }
 
   if (!data) {
@@ -19,8 +19,8 @@ export default function Protected() {
           from: pathname,
         }}
       />
-    )
+    );
   }
 
-  return <Outlet />
+  return <Outlet />;
 }

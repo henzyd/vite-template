@@ -1,10 +1,10 @@
-import { Button } from '@mui/material'
-import { useRouteError } from 'react-router-dom'
+import { Button } from "@mui/material";
+import { useRouteError } from "react-router-dom";
 
 export default function ErrorBoundary() {
-  const error = useRouteError()
+  const error = useRouteError();
 
-  console.error(error)
+  console.error(error);
 
   return (
     <>
@@ -13,5 +13,5 @@ export default function ErrorBoundary() {
         Reload Page
       </Button>
     </>
-  )
+  );
 }

@@ -7,5 +7,5 @@ export default function DashboardLoader() {
         <div className="animate-pulse rounded-lg h-full bg-gray-200" />
       </div>
     </div>
-  )
+  );
 }

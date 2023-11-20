@@ -1,6 +1,6 @@
-import { API_TOKEN } from '@/app-constants'
+import { REFRESH_TOKEN_KEY } from "../constants";
 
 export function logout() {
-  localStorage.removeItem(API_TOKEN)
-  window.location.href = '/login'
+  localStorage.removeItem(REFRESH_TOKEN_KEY);
+  window.location.href = "/login";
 }

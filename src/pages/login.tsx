@@ -1,24 +1,27 @@
-import { Formik } from 'formik'
-import FormField from '../components/form-field'
-import { LoadingButton } from '@mui/lab'
-import useLogin from '../mutations/auth/login'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from "react-router-dom";
+import { LoadingButton } from "@mui/lab";
+import { Formik } from "formik";
+import FormField from "~/components/form-field";
+import useLogin from "~/mutations/auth/login";
 
 export default function Login() {
-  const login = useLogin()
-  const navigate = useNavigate()
-  const { state } = useLocation()
+  const navigate = useNavigate();
+  const { state } = useLocation();
+
+  const login = useLogin();
 
   return (
     <Formik
       initialValues={{
-        email: '',
-        password: '',
+        email: "",
+        password: "",
       }}
       onSubmit={async (values) => {
-        await login.mutateAsync(values).then(() => {
-          navigate(state?.from || '/', { replace: true })
-        })
+        const response = await login.mutateAsync(values);
+
+        if (response) {
+          navigate(state?.from || "/", { replace: true });
+        }
       }}
     >
       {({ handleSubmit }) => (
@@ -28,11 +31,11 @@ export default function Login() {
           {login.isError && (
             <p className="text-sm text-red-500">invalid email/password combination</p>
           )}
-          <LoadingButton loading={login.isLoading} type="submit">
+          <LoadingButton loading={login.isPending} type="submit">
             Login
           </LoadingButton>
         </form>
       )}
     </Formik>
-  )
+  );
 }
