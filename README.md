@@ -129,8 +129,8 @@ yarn prepare
 
 This template provides a foundation for building React-based dashboards with Vite. Customize it to fit your project requirements and enhance it with additional features as needed. Happy coding!
 
-### Put together by
+## Put together by
 
-Uchechuwku Anachuna
-anachunauchechukwu@gmail.com
-[@henzyd](https://github.com/henzyd)
+- Uchechuwku Anachuna
+- anachunauchechukwu@gmail.com
+- [@henzyd](https://github.com/henzyd)
