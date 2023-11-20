@@ -1,9 +1,9 @@
 import { Navigate, Outlet, useLocation } from 'react-router-dom'
-import { useLoggedInUser } from '../../data/auth'
-import DashboardLoader from '../../components/loader/dashboard-loader'
+import { useCurrentUser } from '~/queries/user'
+import DashboardLoader from '~/components/loader/dashboard-loader'
 
 export default function Protected() {
-  const { data, isLoading } = useLoggedInUser()
+  const { data, isLoading } = useCurrentUser()
 
   const { pathname } = useLocation()
 
