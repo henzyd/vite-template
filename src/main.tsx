@@ -5,18 +5,18 @@ import "./index.css";
 import { ThemeProvider } from "@mui/material";
 import theme from "./theme.tsx";
 import ReactQueryProvider from "./providers/react-query.tsx";
-import DashboardLoader from "./components/loader/dashboard.tsx";
-import { Toaster } from "react-hot-toast";
+import AppLoader from "./components/loader/app.tsx";
+import Toast from "./components/toast.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ReactQueryProvider>
       <ThemeProvider theme={theme}>
-        <Suspense fallback={<DashboardLoader />}>
+        <Suspense fallback={<AppLoader />}>
           <App />
         </Suspense>
       </ThemeProvider>
     </ReactQueryProvider>
-    <Toaster position="top-right" />
+    <Toast />
   </React.StrictMode>
 );
