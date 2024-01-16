@@ -4,7 +4,7 @@ import App from "./App.tsx";
 import "./index.css";
 import { ThemeProvider } from "@mui/material";
 import theme from "./theme.tsx";
-import ReactQueryProvider from "./providers/react-query.tsx";
+import ReactQueryProvider from "./providers/react-query/provider.tsx";
 import AppLoader from "./components/loader/app.tsx";
 import Toast from "./components/toast.tsx";
 
